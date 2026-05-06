@@ -524,3 +524,42 @@ export const AUDIENCE_CARDS: AudienceCard[] = [
     color:    '#E5C97A',
   },
 ]
+// ── Slide 07 — Events Data ─────────────────────────────────
+export interface EventType {
+  id:       string
+  label:    string
+  capacity: string
+  image:    string
+  description: string
+}
+ 
+export const EVENT_TYPES: EventType[] = [
+  {
+    id:          'fashion',
+    label:       'Fashion & Lifestyle',
+    capacity:    'Center Court · Up to 10,000',
+    image:       'https://moaapi.net/sites/default/files/2025-06/FLORIDA_Bleached_RECYCLED_BLUE_JAKE_Dark_RECYCLED_BLUE_0017%20copy%20%282%29_1.jpg?w=1400&q=80',
+    description: 'Runway-ready spaces. Built-in media coverage. Premium audience.',
+  },
+  {
+    id:          'Dining',
+    label:       'Dining Experiences',
+    capacity:    'Rotunda · 500+',
+    image:       'https://moaapi.net/sites/default/files/2021-08/Dunkin%20Donuts%20Storefront.jpg?w=1400&q=80',
+    description: 'Culinary activations that turn a meal into a moment — and a moment into a memory.',
+  },
+  {
+    id:          'Movie',
+    label:       'Movie Premieres & Fan Events',
+    capacity:    'Theaters · 1,000+',
+    image:       'https://moaapi.net/sites/default/files/2024-03/B%26B%20Theatres_0.jpg?w=1400&q=80',
+    description: 'State-of-the-art theaters. High foot traffic. Built-in fanbase. ',
+  },
+  {
+    id:          'celebrity',
+    label:       'Celebrity & Pop Culture',
+    capacity:    'Center Court · Up to 10,000',
+    image:       'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1400&q=80',
+    description: 'Appearances, fan events, and cultural moments that go viral.',
+  },
+]
