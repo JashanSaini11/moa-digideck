@@ -72,7 +72,7 @@ export default function Slide02Overview({ onNext }: Props) {
 
       {/* RIGHT VISUAL */}
       <div className="hidden md:flex w-1/2 items-center justify-center">
-        <div style={{ width: 420, height: 420 }}>
+        <div style={{ width: 620, height: 620 }}>
           <Stack
             randomRotation={false}
             sensitivity={200}
@@ -83,7 +83,7 @@ export default function Slide02Overview({ onNext }: Props) {
                   src={src}
                   alt={`Mall of America - card ${i + 1}`}
                   fill
-                  sizes="420px"
+                  sizes="620px"
                   style={{ objectFit: 'cover' }}
                 />
               </div>

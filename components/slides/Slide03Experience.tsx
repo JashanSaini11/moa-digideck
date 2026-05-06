@@ -83,7 +83,7 @@ export default function Slide03Experience({ onNext }: Props) {
       </div>
 
       {/* RIGHT GRID */}
-      <div className="hidden md:grid w-1/2 grid-cols-2 gap-4 self-center py-8">
+      <div className="hidden md:grid w-2/3 grid-cols-2 gap-4 self-center py-8">
 
         {/* Top row: first two cards */}
         {items.slice(0, 2).map((item, i) => (

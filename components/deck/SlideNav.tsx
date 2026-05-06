@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2'
 import { cn } from '@/lib/utils'
-import { slidesData } from '@/lib/slidesData'
+import { SLIDES } from '@/lib/slidesData'
 
 interface SlideNavProps {
     total: number
@@ -29,7 +29,7 @@ export default function SlideNav({
         return () => clearTimeout(t)
     }, [])
 
-    const currentSlide = slidesData[current]
+    const currentSlide = SLIDES[current]
 
     return (
         <>
@@ -120,15 +120,15 @@ export default function SlideNav({
                         onClick={onPrev}
                         aria-label="Previous slide"
                         className={cn(
-                            'pointer-events-auto fixed left-5 top-1/2 -translate-y-1/2 z-chrome',
-                            'w-10 h-10 flex items-center justify-center',
+                            'pointer-events-auto fixed left-2 top-[54%] -translate-y-1/2 z-chrome',
+                            'w-12 h-12 flex items-center justify-center p-1',
                             'rounded-full border border-moa-gold-border',
                             'bg-moa-void/50 backdrop-blur-md',
                             'text-moa-ivory-35 hover:text-moa-gold hover:border-moa-gold',
                             'transition-colors duration-200 group'
                         )}
                     >
-                        <HiChevronLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform duration-150" />
+                        <HiChevronLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform duration-150" />
                     </motion.button>
                 )}
             </AnimatePresence>
@@ -146,15 +146,15 @@ export default function SlideNav({
                         onClick={onNext}
                         aria-label="Next slide"
                         className={cn(
-                            'pointer-events-auto fixed right-5 top-1/2 -translate-y-1/2 z-chrome',
-                            'w-10 h-10 flex items-center justify-center',
+                            'pointer-events-auto fixed right-2 top-[54%] -translate-y-1/2 z-chrome',
+                            'w-12 h-12 flex items-center justify-center p-1',
                             'rounded-full border border-moa-gold-border',
                             'bg-moa-void/50 backdrop-blur-md',
                             'text-moa-ivory-35 hover:text-moa-gold hover:border-moa-gold',
                             'transition-colors duration-200 group'
                         )}
                     >
-                        <HiChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-150" />
+                        <HiChevronRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform duration-150" />
                     </motion.button>
                 )}
             </AnimatePresence>

@@ -6,4 +6,4 @@ const Slide07Events = () => {
   )
 }
 
-export default Slide07Events
+export default Slide07Events 

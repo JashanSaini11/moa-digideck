@@ -19,7 +19,7 @@ import Slide05Dining from "@/components/slides/Slide05Dining";
 import Slide06Attractions from "@/components/slides/Slide06Attractions";
 import Slide07Events from "@/components/slides/Slide07Events";
 import Slide08Monetization from "@/components/slides/Slide08Monetization";
-import { slidesData } from "@/lib/slidesData";
+import { SLIDES } from '@/lib/slidesData'
 
 export default function DeckShell() {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -65,18 +65,7 @@ export default function DeckShell() {
     }
   }, [currentSlide]);
 
-  // ─────────────────────────────────────────────
-  // Keyboard navigation (extra control)
-  // ─────────────────────────────────────────────
-  useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") handleNext();
-      if (e.key === "ArrowLeft") handlePrev();
-    };
 
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [currentSlide]);
 
   return (
     <div className="w-screen h-screen overflow-hidden relative">
@@ -106,7 +95,7 @@ export default function DeckShell() {
             <Slide
               onNext={handleNext}
               onGoTo={setSlide}
-              slideData={slidesData[index]}
+              slideData={SLIDES[index]}
             />
           </SwiperSlide>
         ))}
@@ -120,7 +109,7 @@ export default function DeckShell() {
         <SlideNav
           total={slides.length}
           current={currentSlide}
-          section={slidesData[currentSlide]?.section ?? ""}
+          section={SLIDES[currentSlide]?.section ?? ""}
           onPrev={handlePrev}
           onNext={handleNext}
           onDot={setSlide}
