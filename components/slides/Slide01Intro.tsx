@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useDeckStore } from "@/lib/store";
 import type { SlideData } from "@/lib/slidesData";
 import Image from "next/image";
+import { useVideoPlayer } from "@/hooks/useVideoplayer";
 
 interface Props {
   slideData: SlideData;
@@ -14,9 +15,13 @@ interface Props {
 }
 
 export default function Slide01Intro({ onNext }: Props) {
-  const { setIntroComplete } = useDeckStore();
-  const videoRef = useRef<HTMLVideoElement>(null);
-  
+  const { setIntroComplete, currentSlide } = useDeckStore();
+
+    const videoRef = useVideoPlayer({
+    isActive:    currentSlide === 0,
+    resetOnExit: false,   // keep position — no jarring restart if user comes back
+  })
+
   const [skipVisible, setSkipVisible] = useState(false);
 
   // Typewriter headline
@@ -62,6 +67,7 @@ export default function Slide01Intro({ onNext }: Props) {
           autoPlay
           muted
           loop
+          preload="auto" 
           playsInline
         >
           <source src="/hero.mp4" type="video/mp4" />
