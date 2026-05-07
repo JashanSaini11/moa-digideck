@@ -16,7 +16,7 @@ interface Props {
 export default function Slide01Intro({ onNext }: Props) {
   const { setIntroComplete } = useDeckStore();
   const videoRef = useRef<HTMLVideoElement>(null);
-
+  
   const [skipVisible, setSkipVisible] = useState(false);
 
   // Typewriter headline

@@ -2,9 +2,8 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { HiArrowRight, HiMapPin, HiClock, HiArrowTopRightOnSquare } from 'react-icons/hi2'
+import { HiMapPin, HiClock, HiArrowTopRightOnSquare } from 'react-icons/hi2'
 import { slideContentContainer, staggerItem } from '@/lib/animations'
-import type { SlideData } from '@/lib/slidesData'
 
 // ── Data ────────────────────────────────────────────────────
 const HOURS = [
@@ -174,26 +173,6 @@ export default function Slide08Monetization() {
               Whether you&rsquo;re opening a flagship, launching an activation,
               or hosting an event — the conversation starts here.
             </motion.p>
-
-            {/* CTA stack */}
-            <motion.div variants={staggerItem} className="flex flex-col gap-3">
-              {CTAS.map((cta) => (
-                <motion.button
-                  key={cta.label}
-                  whileHover={{ x: 4 }}
-                  whileTap={{ scale: 0.97 }}
-                  transition={{ duration: 0.18 }}
-                  className={
-                    cta.primary
-                      ? 'btn-gold self-start'
-                      : 'btn-ghost self-start'
-                  }
-                >
-                  {cta.label}
-                  <HiArrowRight className="w-3.5 h-3.5" />
-                </motion.button>
-              ))}
-            </motion.div>
           </div>
 
           {/* Address footer */}
